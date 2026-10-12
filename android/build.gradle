@@ -2,7 +2,6 @@ group 'com.authentrend.flutter_passkey'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
     repositories {
         google()
         mavenCentral()
@@ -10,7 +9,6 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -22,8 +20,6 @@ allprojects {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
 android {
     namespace "com.authentrend.flutter_passkey"
     compileSdkVersion 34
@@ -31,10 +27,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
     }
 
     sourceSets {
@@ -53,4 +45,19 @@ dependencies {
     // optional - needed for credentials support from play services, for devices running
     // Android 13 and below.
     implementation "androidx.credentials:credentials-play-services-auth:1.2.0-rc01"
+}
+
+// Configure the Kotlin JVM target. The compilerOptions DSL is available with
+// KGP 1.9+ and built-in Kotlin; older KGP only supports kotlinOptions.
+def kotlinExt = project.extensions.findByName('kotlin')
+if (kotlinExt?.hasProperty('compilerOptions')) {
+    kotlin {
+        compilerOptions {
+            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
+        }
+    }
+} else if (project.android.hasProperty('kotlinOptions')) {
+    android.kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
