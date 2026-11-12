@@ -13,6 +13,19 @@
             "at any time"
         ]
     },
+    "customManagers": [
+        {
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/^\\.github/workflows/build\\.ya?ml$/"
+            ],
+            "matchStrings": [
+                "flutter-version: (?<currentValue>.*)\\n"
+            ],
+            "datasourceTemplate": "flutter-version",
+            "depNameTemplate": "flutter"
+        }
+    ],
     "semanticCommitType": "fix",
     "rangeStrategy": "auto"
 }
