@@ -7,7 +7,7 @@ A Flutter plugin for Passkey.
 
 | Android | iOS | MacOS | Web | Linux | Windows |
 | :-----: | :-: | :---: | :-: | :---: | :-----: |
-|    V    |  V  |   X   |  X  |   X   |    X    |
+|    V    |  X  |   X   |  X  |   X   |    X    |
 
 ## Usage
 
