@@ -2,6 +2,9 @@
 
 A Flutter plugin for Passkey.
 
+> [!NOTE]
+> This is a fork of [AuthenTrend/flutter_passkey](https://github.com/AuthenTrend/flutter_passkey), maintained by instahelpme.
+
 | Android | iOS | MacOS | Web | Linux | Windows |
 | :-----: | :-: | :---: | :-: | :---: | :-----: |
 |    V    |  V  |   X   |  X  |   X   |    X    |
