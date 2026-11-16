@@ -47,7 +47,7 @@ android {
 
 dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0"
-    implementation "androidx.credentials:credentials:1.2.2"
+    implementation "androidx.credentials:credentials:1.6.0"
 
     // optional - needed for credentials support from play services, for devices running
     // Android 13 and below.
